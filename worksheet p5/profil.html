@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARVEL STUDIOS</title>
+    <link rel="stylesheet" href="tokens.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="komponen.css">
+    <link rel="stylesheet" href="tema.css">
+</head>
+
+<body id="home" class="page">
+    <header>
+        <div class="header-baris">
+            <div>
+                <h1>MARVEL STUDIOS</h1>
+                <p>Marvel Studios adalah studio yang memproduksi berbagai film dan serial superhero.</p>
+            </div>
+
+            <div class="pengaturan-tema">
+                <input type="checkbox" id="tema" class="pengalih-tema">
+                <label for="tema" class="tombol-tema">Tema gelap</label>
+            </div>
+        </div>
+
+        <nav aria-label="Navigasi utama">
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#daftar-film">DAFTAR FILM</a></li>
+                <li><a href="#karakter-pameran">KARAKTER &amp; PAMERAN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="isi">
+        <aside class="sisi" aria-label="Informasi dan navigasi cepat">
+            <h2>Menu Cepat</h2>
+            <div class="sisi__menu">
+                <a href="#daftar-film">Daftar Film</a>
+                <a href="#form-film">Film Favorit</a>
+                <a href="#karakter-pameran">Karakter &amp; Pameran</a>
+            </div>
+        </aside>
+
+        <section id="daftar-film" class="utama">
+            <h2>Avangers</h2>
+            <p>Avengers merupakan film dari Marvel studios yang mempertemukan berbagai superhero untuk menghadapi ancaman besar.</p>
+
+            <div class="tabel-wrapper">
+                <table>
+                    <caption>Daftar Film Marvel Studios</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Judul Film</th>
+                            <th scope="col">Sinopsis</th>
+                            <th scope="col">Tahun Rilis</th>
+                            <th scope="col">Pameran</th>
+                            <th scope="col">Fakta Singkat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Avengers: Infinity War</td>
+                            <td>Para Avengers dan sekutunya berusaha menghentikan Thanos yang mengumpulkan Infinity Stones.</td>
+                            <td>2018</td>
+                            <td>Karakter Avengers</td>
+                            <td>Menjadi salah satu film penting dalam perjalanan Avengers.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Avengers: Endgame</td>
+                            <td>Para pahlawan berusaha memperbaiki dampak dari peristiwa yang terjadi sebelumnya.</td>
+                            <td>2019</td>
+                            <td>Karakter Avengers</td>
+                            <td>Melanjutkan cerita dari Avengers: Infinity War.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Iron Man</td>
+                            <td>Tony Stark membangun baju zirah dan memulai perjalanannya sebagai Iron Man.</td>
+                            <td>2008</td>
+                            <td>Iron Man</td>
+                            <td>Salah satu film awal dalam Marvel Cinematic Universe.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="form-film" class="utama">
+            <h2>Avangers</h2>
+            <p>Avangers adalah tim pahlawan super fiktif dari Marvel Comics yang bergabung untuk melawan ancaman besar yang tidak bisa dikalahkan sendiri.</p>
+
+            <p>Silakan isi formulir berikut untuk memberikan informasi mengenai film Marvel favorit.</p>
+
+            <form action="/simpan" method="post">
+                <div class="form-kolom">
+                    <label for="nama">Nama</label>
+                    <input type="text" id="nama" name="nama" required minlength="3" maxlength="50" autocomplete="name">
+                    <p class="pesan-galat">Nama wajib diisi minimal 3 karakter.</p>
+                </div>
+
+                <div class="form-kolom">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required autocomplete="email">
+                    <p class="pesan-galat">Masukkan alamat email yang valid.</p>
+                </div>
+
+                <div class="form-kolom">
+                    <label for="film-favorit">Film favorit</label>
+                    <input type="text" id="film-favorit" name="film-favorit" required minlength="2" maxlength="100">
+                    <p class="pesan-galat">Film favorit wajib diisi.</p>
+                </div>
+
+                <div class="form-kolom">
+                    <label for="tahun-rilis">Tahun rilis film favorit</label>
+                    <input type="number" id="tahun-rilis" name="tahun-rilis" min="1900" max="2100" required>
+                    <p class="pesan-galat">Masukkan tahun antara 1900 dan 2100.</p>
+                </div>
+
+                <button type="submit">Simpan</button>
+            </form>
+        </section>
+
+        <section id="karakter-pameran" class="bawah">
+            <h2>Karakter &amp; Pameran</h2>
+            <p>Berikut adalah gambar kolase karakter superhero Marvel Studios.</p>
+            <figure>
+                <img src="thumb-1920-1286361.jpg"
+                     alt="Kolase karakter superhero Marvel Studios"
+                     width="640" height="360" loading="lazy">
+            <p>Berikut adalah poster FILM superhero Marvel Studios.</p>
+                <img src="images.jpg"
+                     alt="Poster karakter superhero Marvel Studios"
+                     width="640" height="360" loading="lazy">
+            <p>Berikut adalah nama karakter superhero Marvel Studios.</p>
+                <img src="oIfnevRiENDR2IBE31FoFIUWFiMXQgBgGxEk2A~tplv-tiktokx-origin.jpg"
+                     alt="Nama karakter superhero Marvel Studios"
+                     width="640" height="360" loading="lazy">
+                <figcaption>Kolase karakter superhero Marvel Studios.</figcaption>
+            </figure>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 MARVEL STUDIOS</p>
+        <p>Dibuat oleh Nuzula Firmansyah - NIM 25523137</p>
+    </footer>
+</body>
+</html>
