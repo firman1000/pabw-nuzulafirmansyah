@@ -7,6 +7,7 @@ main.isi {
     grid-template-areas:
         "sisi"
         "utama"
+        "form-film"
         "bawah";
     gap: var(--space-4);
 }
@@ -36,15 +37,27 @@ main.isi > *,
 .utama,
 .sisi,
 .bawah,
-.form-kolom {
+.form-kolom,
+#form-film,
+#daftar-film {
     min-width: 0;
 }
 
 .kartu__judul,
 .utama,
 .sisi,
-.bawah {
+.bawah,
+#form-film,
+#daftar-film {
     overflow-wrap: anywhere;
+}
+
+#daftar-film {
+    grid-area: utama;
+}
+
+#form-film {
+    grid-area: form-film;
 }
 
 /* tablet: galeri dua kolom */
@@ -60,7 +73,16 @@ main.isi > *,
         grid-template-columns: 16rem 1fr;
         grid-template-areas:
             "sisi utama"
+            "sisi form-film"
             "sisi bawah";
+    }
+
+    #daftar-film {
+        grid-area: utama;
+    }
+
+    #form-film {
+        grid-area: form-film;
     }
 
     .galeri {

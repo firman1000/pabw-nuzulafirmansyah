@@ -20,6 +20,7 @@ section {
 
 table {
     width: 100%;
+    min-width: 52rem;
     border-collapse: collapse;
 }
 
@@ -36,6 +37,7 @@ td {
     padding: var(--space-2) var(--space-3);
     text-align: left;
     vertical-align: top;
+    min-width: 7rem;
 }
 
 thead th {

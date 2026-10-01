@@ -48,6 +48,7 @@ main.isi {
     grid-template-columns: 16rem 1fr;
     grid-template-areas:
         "sisi utama"
+        "sisi form-film"
         "sisi bawah";
     gap: var(--space-6);
     min-width: 0;
@@ -62,6 +63,11 @@ main.isi {
 
 .utama {
     grid-area: utama;
+    min-width: 0;
+}
+
+#form-film {
+    grid-area: form-film;
     min-width: 0;
 }
 
@@ -91,6 +97,7 @@ main.isi > section {
 }
 
 .tabel-wrapper {
+    width: 100%;
     min-width: 0;
     overflow-x: auto;
 }
@@ -112,6 +119,7 @@ footer {
         grid-template-areas:
             "sisi"
             "utama"
+            "form-film"
             "bawah";
     }
 }
