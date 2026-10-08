@@ -1,8 +1,3 @@
-// P8 - JavaScript Modern ES6+, Struktur Data, dan Array Methods
-// Nama: Nuzula Firmansyah
-// NIM: 25523137
-// Topik: MARVEL STUDIOS
-
 const profil = {
     nama: "Nuzula Firmansyah",
     peran: "Mahasiswa Informatika yang belajar front-end",
@@ -37,7 +32,7 @@ const daftarProyek = [
     },
 ];
 
-// Dua fungsi murni: masing-masing hanya bergantung pada argumen dan mengembalikan nilai.
+
 function buatPerkenalan({ nama, peran }) {
     return `${nama} — ${peran}`;
 }
@@ -47,13 +42,12 @@ const formatKeahlian = (daftar) => daftar.join(" · ");
 console.log(buatPerkenalan(profil));
 console.log(formatKeahlian(profil.keahlian));
 
-// Nilai bawaan dan akses aman.
+
 const topikAktif = profil.topik ?? "Topik belum ditentukan";
 const lokasiPameran = profil.alamat?.kota ?? "Belum ada lokasi pameran";
 console.log("Topik:", topikAktif);
 console.log("Lokasi:", lokasiPameran);
 
-// Array methods: map, filter, dan find.
 const judulProyek = daftarProyek.map((proyek) => proyek.judul);
 const proyekSelesai = daftarProyek.filter((proyek) => proyek.selesai);
 const filmKatalog = daftarProyek.find((proyek) => proyek.judul === "Avengers: Endgame");
@@ -64,34 +58,52 @@ console.table(proyekSelesai);
 console.log("Hasil map:", judulProyek);
 console.log("Hasil find:", filmKatalog);
 
-// Salinan diurutkan sehingga data asli tidak berubah.
+
 const proyekUrut = [...daftarProyek].sort((a, b) => a.tahun - b.tahun);
 console.table(proyekUrut);
 console.log("Data asli setelah sort tetap:", daftarProyek);
 
-// Menampilkan data ke halaman.
-document.title = profil.topik;
-document.querySelector("#nama-halaman").textContent = profil.topik;
-document.querySelector("#judul-profil").textContent = `Profil ${profil.nama}`;
-document.querySelector("#deskripsi").textContent = profil.deskripsi;
-document.querySelector("#kalimat-perkenalan").textContent = buatPerkenalan(profil);
-document.querySelector("#keahlian").textContent = formatKeahlian(profil.keahlian);
-document.querySelector("#jumlah-proyek").textContent = jumlahProyek;
 
-const tbody = document.querySelector("#tabel-proyek");
-tbody.innerHTML = daftarProyek.map((proyek, index) => `
-    <tr>
-        <th scope="row">${index + 1}</th>
-        <td>${proyek.judul}</td>
-        <td>${proyek.deskripsi}</td>
-        <td>${proyek.tahun}</td>
-        <td>${proyek.karakter}</td>
-        <td>${proyek.selesai ? "Selesai" : "Belum selesai"}</td>
-    </tr>
-`).join("");
+function renderProfil() {
+    document.title = profil.topik;
+    const namaHalaman = document.querySelector("#nama-halaman");
+    const judulProfil = document.querySelector("#judul-profil");
+    const deskripsiEl = document.querySelector("#deskripsi");
+    const kalimatPerkenalan = document.querySelector("#kalimat-perkenalan");
+    const keahlianEl = document.querySelector("#keahlian");
+    const jumlahProyekEl = document.querySelector("#jumlah-proyek");
+    const tbody = document.querySelector("#tabel-proyek");
+    const ringkasanSelesai = document.querySelector("#ringkasan-selesai");
+    const hasilFind = document.querySelector("#hasil-find");
 
-document.querySelector("#ringkasan-selesai").textContent =
-    `${proyekSelesai.length} proyek/film dalam data berstatus selesai.`;
+    if (!namaHalaman || !judulProfil || !deskripsiEl || !kalimatPerkenalan || !keahlianEl || !jumlahProyekEl || !tbody || !ringkasanSelesai || !hasilFind) {
+        return;
+    }
 
-document.querySelector("#hasil-find").textContent =
-    `Hasil find: ${filmKatalog?.judul ?? "data tidak ditemukan"}`;
+    namaHalaman.textContent = profil.topik;
+    judulProfil.textContent = `Profil ${profil.nama}`;
+    deskripsiEl.textContent = profil.deskripsi;
+    kalimatPerkenalan.textContent = buatPerkenalan(profil);
+    keahlianEl.textContent = formatKeahlian(profil.keahlian);
+    jumlahProyekEl.textContent = jumlahProyek;
+
+    tbody.innerHTML = daftarProyek.map((proyek, index) => `
+        <tr>
+            <th scope="row">${index + 1}</th>
+            <td>${proyek.judul}</td>
+            <td>${proyek.deskripsi}</td>
+            <td>${proyek.tahun}</td>
+            <td>${proyek.karakter}</td>
+            <td>${proyek.selesai ? "Selesai" : "Belum selesai"}</td>
+        </tr>
+    `).join("");
+
+    ringkasanSelesai.textContent = `${proyekSelesai.length} proyek/film dalam data berstatus selesai.`;
+    hasilFind.textContent = `Hasil find: ${filmKatalog?.judul ?? "data tidak ditemukan"}`;
+}
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", renderProfil);
+} else {
+    renderProfil();
+}
