@@ -1,6 +1,3 @@
-/* Worksheet P6 — Responsif Mobile-First */
-
-/* dasar: berlaku di semua lebar */
 main.isi {
     display: grid;
     grid-template-columns: 1fr;
@@ -60,14 +57,14 @@ main.isi > *,
     grid-area: form-film;
 }
 
-/* tablet: galeri dua kolom */
+
 @media (min-width: 48rem) {
     .galeri {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* desktop: sidebar bersanding dengan konten */
+
 @media (min-width: 60rem) {
     main.isi {
         grid-template-columns: 16rem 1fr;

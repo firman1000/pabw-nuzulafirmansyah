@@ -154,12 +154,12 @@ input:user-invalid {
     color: var(--color-surface);
 }
 
-/* Penempatan menonjol: kartu informasi memanjang dua jalur kolom */
+
 .sorotan {
     grid-column: span 2;
 }
 
-/* Galeri adaptif dari materi P5 */
+
 .galeri {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
