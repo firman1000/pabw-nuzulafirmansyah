@@ -1,3 +1,4 @@
+(() => {
 const profil = {
     nama: "Nuzula Firmansyah",
     peran: "Mahasiswa Informatika yang belajar front-end",
@@ -14,6 +15,7 @@ const daftarProyek = [
         tahun: 2018,
         deskripsi: "Para Avengers dan sekutunya berusaha menghentikan Thanos yang mengumpulkan Infinity Stones.",
         karakter: "Karakter Avengers",
+        rating: 4.8,
         kategori: "Avengers",
         selesai: true,
     },
@@ -22,6 +24,7 @@ const daftarProyek = [
         tahun: 2019,
         deskripsi: "Para pahlawan berusaha memperbaiki dampak dari peristiwa Infinity War.",
         karakter: "Karakter Avengers",
+        rating: 4.9,
         kategori: "Avengers",
         selesai: true,
     },
@@ -30,6 +33,7 @@ const daftarProyek = [
         tahun: 2008,
         deskripsi: "Tony Stark membangun baju zirah dan memulai perjalanannya sebagai Iron Man.",
         karakter: "Iron Man",
+        rating: 4.7,
         kategori: "Solo",
         selesai: true,
     },
@@ -67,7 +71,7 @@ console.table(proyekUrut);
 console.log("Data asli setelah sort tetap:", daftarProyek);
 
 
-export {
+globalThis.MARVEL_APP = {
     profil,
     jumlahProyek,
     daftarProyek,
@@ -76,3 +80,4 @@ export {
     proyekSelesai,
     filmKatalog,
 };
+})();

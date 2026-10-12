@@ -5,10 +5,10 @@
 **Topik:** MARVEL STUDIOS
 
 ## Isi proyek
-- `profil.html`: halaman profil dengan tabel film, filter kategori, dan form pesan.
+- `profil.html`: halaman profil dengan tabel film, filter kategori, daftar ulasan tersimpan, dan form ulasan dengan rating bintang 1–5.
 - `styles.css`: gaya halaman serta komponen filter dan validasi.
-- `js/app.js`: data profil, data proyek, dan fungsi murni yang berasal dari P8.
-- `js/dom.js`: pemilihan elemen, render data, event delegation, keadaan kosong, dan validasi form.
+- `js/app.js`: data profil, data proyek, dan fungsi murni yang berasal dari P8; dimuat sebagai skrip biasa supaya bisa dijalankan langsung dari `file://`.
+- `js/dom.js`: pemilihan elemen, render data, event delegation, keadaan kosong, validasi form, dan penyimpanan ulasan di `localStorage`; dimuat setelah `app.js`.
 - `Worksheet_PABW_Pertemuan9_Asli.docx`: lembar instruksi asli.
 
 ## Isian lembar A.2 — Daftar elemen
@@ -17,11 +17,12 @@
 | Daftar proyek | `#tabel-proyek` | Baris film dari `daftarProyek` | `tbody` |
 | Baris tombol filter | `#filter` | Menangani klik semua tombol filter | `barisFilter` |
 | Pesan daftar kosong | `#pesan-kosong` | Pesan saat filter tidak menemukan film | `pesanKosong` |
-| Form dan tiap kolomnya | `#form-pesan`, `#nama-pengirim`, `#email-pengirim`, `#isi-pesan` | Memvalidasi nama, email, dan pesan | `form`, `inputNama`, `inputEmail`, `inputPesan` |
+| Form dan tiap kolomnya | `#form-ulasan`, `#nama-pengirim`, `#email-pengirim`, `input[name="rating"]`, `#isi-ulasan` | Memvalidasi nama, email, rating, dan ulasan | `form`, `inputNama`, `inputEmail`, `ratingInputs`, `inputUlasan` |
 
 ## Isian lembar B.3 — Pemeriksaan hasil
 - Jumlah kartu/baris pada halaman: 3, sama dengan panjang `daftarProyek`.
 - Baris paling atas: Avengers: Infinity War, sama dengan data pertama.
+- Kolom karakter/rating menampilkan karakter dan rating contoh dalam lencana bintang berwarna emas pada skala 5.
 - Isi kartu/tabel: dimasukkan dengan `textContent`, sehingga tampil sebagai teks.
 
 ## Isian lembar C.2 — Tombol filter
@@ -32,9 +33,10 @@
 
 ## Isian lembar D.3 — Validasi form
 - Kirim form kosong: halaman tidak dimuat ulang dan pesan galat per kolom muncul.
-- Isi nama minimal 2 karakter, email valid, dan pesan minimal 5 karakter: pesan galat hilang.
+- Isi nama minimal 2 karakter, email valid, pilih rating 1–5 bintang, dan tulis ulasan minimal 5 karakter: pesan galat hilang.
 - Isi hanya spasi: tetap tidak sah karena nilai diperiksa dengan `trim()`.
 - Tombol kirim aktif hanya jika semua kolom valid.
+- Ulasan berhasil dikirim akan muncul pada bagian “Ulasan terkirim” dan tetap tersimpan di `localStorage` pada browser/perangkat yang sama; tombol “Hapus ulasan” menghapus ulasan setelah konfirmasi.
 
 ## Isian lembar E.4 — Catatan kasus
 | Gejala | Sebab | Baris/perbaikan |

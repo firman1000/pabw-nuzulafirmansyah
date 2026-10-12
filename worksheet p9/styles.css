@@ -203,6 +203,7 @@ tbody tr { background: rgba(255, 255, 255, .01); transition: background .2s ease
 tbody tr:hover { background: rgba(230, 36, 41, .08); }
 tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
 tbody th[scope="row"] { color: var(--emas); }
+.rating-film { display: inline-flex; align-items: center; gap: .25rem; margin-inline-start: .55rem; padding: .18rem .55rem; border: 1px solid rgba(243, 201, 105, .45); border-radius: 999px; background: rgba(243, 201, 105, .1); color: var(--emas); font-size: .78rem; font-weight: 800; white-space: nowrap; }
 .pesan-kosong { color: var(--redup); }
 
 .galeri-karakter {
@@ -250,6 +251,15 @@ tbody th[scope="row"] { color: var(--emas); }
 .form-field { display: grid; gap: .4rem; margin: .6rem 0; }
 .form-field-penuh { grid-column: 1 / -1; }
 .form-field label { color: #e4e4e7; font-size: .82rem; font-weight: 750; }
+fieldset.form-field { min-width: 0; padding: 0; border: 0; }
+.rating-field legend { margin-bottom: .4rem; color: #e4e4e7; font-size: .82rem; font-weight: 750; }
+.rating-bintang { display: flex; flex-direction: row-reverse; justify-content: flex-end; gap: .25rem; width: fit-content; }
+.rating-bintang input { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; clip-path: inset(50%); }
+.rating-bintang label { color: #747782; font-size: 2rem; line-height: 1.2; cursor: pointer; transition: color .2s ease, transform .2s ease; }
+.rating-bintang input:checked ~ label, .rating-bintang label:hover, .rating-bintang label:hover ~ label { color: var(--emas); }
+.rating-bintang label:hover { transform: scale(1.12); }
+.rating-bintang input:focus-visible + label { outline: 3px solid var(--emas); outline-offset: 3px; }
+.rating-field[aria-invalid="true"] .rating-bintang label { color: #ff8a8a; }
 input, textarea {
     width: 100%;
     padding: .78rem .85rem;
@@ -269,6 +279,17 @@ textarea { min-height: 120px; resize: vertical; }
 #tombol-kirim { border-color: var(--merah); background: var(--merah); color: white; }
 #tombol-kirim:not(:disabled):hover { transform: translateY(-2px); background: #c91e24; }
 #status-form { min-height: 1.5rem; margin-bottom: 0; color: #9be7a5; }
+.ulasan-kosong { margin: 1.7rem 0 0; color: var(--redup); font-size: 1.15rem; }
+.pesan-penyimpanan { padding: .75rem 1rem; border: 1px solid rgba(255, 100, 100, .4); border-radius: 6px; color: #ff8a8a; }
+.daftar-ulasan { display: grid; gap: .8rem; }
+.kartu-ulasan { padding: 1rem 1.1rem; border: 1px solid var(--garis); border-radius: 8px; background: rgba(255, 255, 255, .025); }
+.kepala-ulasan { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .4rem 1rem; }
+.kepala-ulasan h3 { margin: 0; color: var(--teks); font-size: 1rem; }
+.rating-ulasan { margin: 0; color: var(--emas); font-weight: 800; letter-spacing: .04em; }
+.isi-ulasan { margin: .75rem 0; color: #d0d1d5; white-space: pre-wrap; overflow-wrap: anywhere; }
+.kartu-ulasan time { color: var(--redup); font-size: .75rem; }
+.hapus-ulasan { display: block; min-height: 36px; margin-top: .75rem; padding: .4rem .75rem; border-color: rgba(255, 100, 100, .4); background: rgba(230, 36, 41, .1); color: #ff8a8a; font-size: .75rem; }
+.hapus-ulasan:hover { border-color: var(--merah); background: var(--merah); color: white; }
 
 footer {
     display: flex;

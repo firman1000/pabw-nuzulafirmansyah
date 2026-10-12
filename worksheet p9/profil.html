@@ -17,7 +17,7 @@
             <a href="#home">BERANDA</a>
             <a href="#daftar-film">DAFTAR FILM</a>
             <a href="#karakter-pameran">KARAKTER</a>
-            <a href="#kontak">KONTAK</a>
+            <a href="#ulasan">ULASAN</a>
         </div>
     </nav>
     <div class="hero-konten">
@@ -67,7 +67,7 @@
                 <thead>
                     <tr>
                         <th>No</th><th>Judul Film</th><th>Sinopsis</th>
-                        <th>Tahun Rilis</th><th>Karakter/Pameran</th><th>Status</th>
+                        <th>Tahun Rilis</th><th>Karakter/Rating</th><th>Status</th>
                     </tr>
                 </thead>
                 <tbody id="tabel-proyek"></tbody>
@@ -85,12 +85,12 @@
         </div>
         <div class="galeri-karakter">
             <figure>
-                <img src="oIfnevRiENDR2IBE31FoFIUWFiMXQgBgGxEk2A~tplv-tiktokx-origin.jpg" alt="Kolase poster film-film Marvel Studios" loading="lazy">
-                <figcaption>Koleksi poster film Marvel <span>01</span></figcaption>
+                <img src="oIfnevRiENDR2IBE31FoFIUWFiMXQgBgGxEk2A~tplv-tiktokx-origin.jpg" alt="Kolase karakter Marvel, termasuk Avengers dan pahlawan lainnya" loading="lazy">
+                <figcaption>Karakter Marvel <span>01</span></figcaption>
             </figure>
             <figure>
-                <img src="images.jpg" alt="Kolase berbagai karakter Marvel, termasuk Avengers dan pahlawan lainnya" loading="lazy">
-                <figcaption>Karakter Marvel <span>02</span></figcaption>
+                <img src="images.jpg" alt="Kolase poster film-film Marvel Studios" loading="lazy">
+                <figcaption>Koleksi poster film Marvel <span>02</span></figcaption>
             </figure>
             <figure>
                 <img src="thumb-1920-1286361.jpg" alt="Kolase karakter dan film dari Marvel Cinematic Universe" loading="lazy">
@@ -103,16 +103,16 @@
         </div>
     </section>
 
-    <section id="kontak" class="panel panel-kontak">
+    <section id="ulasan" class="panel panel-kontak">
         <div class="judul-bagian">
             <div>
-                <p class="eyebrow">PUNYA CERITA UNTUK DIBAGIKAN?</p>
-                <h2>Form Pesan</h2>
+                <p class="eyebrow">BAGIKAN PENGALAMANMU</p>
+                <h2>Tulis Ulasan</h2>
             </div>
-            <span class="nomor-bagian" aria-hidden="true">03 / KONTAK</span>
+            <span class="nomor-bagian" aria-hidden="true">04 / ULASAN</span>
         </div>
-        <p class="deskripsi-form">Kirim pesan melalui formulir berikut. Semua kolom wajib diisi.</p>
-        <form id="form-pesan" novalidate>
+        <p class="deskripsi-form">Berikan rating dan ulasanmu. Semua kolom wajib diisi.</p>
+        <form id="form-ulasan" novalidate>
             <div class="form-grid">
                 <div class="form-field">
                     <label for="nama-pengirim">Nama</label>
@@ -124,15 +124,44 @@
                     <input id="email-pengirim" name="email" type="email" autocomplete="email" placeholder="nama@email.com">
                     <small class="pesan-galat" id="galat-email"></small>
                 </div>
+                <fieldset class="form-field form-field-penuh rating-field" aria-describedby="galat-rating">
+                    <legend>Rating</legend>
+                    <div class="rating-bintang" role="radiogroup" aria-label="Pilih rating dari 1 sampai 5 bintang">
+                        <input id="rating-5" name="rating" type="radio" value="5">
+                        <label for="rating-5" aria-label="5 bintang">★</label>
+                        <input id="rating-4" name="rating" type="radio" value="4">
+                        <label for="rating-4" aria-label="4 bintang">★</label>
+                        <input id="rating-3" name="rating" type="radio" value="3">
+                        <label for="rating-3" aria-label="3 bintang">★</label>
+                        <input id="rating-2" name="rating" type="radio" value="2">
+                        <label for="rating-2" aria-label="2 bintang">★</label>
+                        <input id="rating-1" name="rating" type="radio" value="1">
+                        <label for="rating-1" aria-label="1 bintang">★</label>
+                    </div>
+                    <small class="pesan-galat" id="galat-rating"></small>
+                </fieldset>
                 <div class="form-field form-field-penuh">
-                    <label for="isi-pesan">Pesan</label>
-                    <textarea id="isi-pesan" name="pesan" rows="4" placeholder="Tuliskan pesanmu di sini..."></textarea>
-                    <small class="pesan-galat" id="galat-pesan"></small>
+                    <label for="isi-ulasan">Ulasan</label>
+                    <textarea id="isi-ulasan" name="ulasan" rows="4" placeholder="Tuliskan ulasanmu di sini..."></textarea>
+                    <small class="pesan-galat" id="galat-ulasan"></small>
                 </div>
             </div>
-            <button id="tombol-kirim" type="submit" disabled>Kirim pesan <span aria-hidden="true">→</span></button>
+            <button id="tombol-kirim" type="submit" disabled>Kirim ulasan <span aria-hidden="true">→</span></button>
             <p id="status-form" role="status" aria-live="polite"></p>
         </form>
+    </section>
+
+    <section id="ulasan-terkirim" class="panel panel-ulasan-terkirim" aria-labelledby="judul-ulasan-terkirim">
+        <div class="judul-bagian">
+            <div>
+                <p class="eyebrow">ULASAN TERKIRIM</p>
+                <h2 id="judul-ulasan-terkirim">Ulasan terkirim</h2>
+            </div>
+            <span class="nomor-bagian" aria-hidden="true">05 / ULASAN</span>
+        </div>
+        <p id="ulasan-kosong" class="ulasan-kosong">Belum ada ulasan yang terkirim.</p>
+        <p id="pesan-penyimpanan" class="pesan-penyimpanan" role="alert" hidden></p>
+        <div id="daftar-ulasan" class="daftar-ulasan" aria-live="polite"></div>
     </section>
 </main>
 
@@ -145,6 +174,7 @@
     <p>Dibuat oleh Nuzula Firmansyah <span aria-hidden="true">·</span> NIM 25523137</p>
 </footer>
 
-<script type="module" src="js/dom.js"></script>
+<script defer src="js/app.js"></script>
+<script defer src="js/dom.js"></script>
 </body>
 </html>
