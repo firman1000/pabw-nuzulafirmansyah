@@ -1,8 +1,3 @@
-// P8 - JavaScript Modern ES6+, Struktur Data, dan Array Methods
-// Nama: Nuzula Firmansyah
-// NIM: 25523137
-// Topik: MARVEL STUDIOS
-
 const profil = {
     nama: "Nuzula Firmansyah",
     peran: "Mahasiswa Informatika yang belajar front-end",
@@ -40,7 +35,6 @@ const daftarProyek = [
     },
 ];
 
-// Dua fungsi murni: masing-masing hanya bergantung pada argumen dan mengembalikan nilai.
 function buatPerkenalan({ nama, peran }) {
     return `${nama} — ${peran}`;
 }
@@ -50,13 +44,13 @@ const formatKeahlian = (daftar) => daftar.join(" · ");
 console.log(buatPerkenalan(profil));
 console.log(formatKeahlian(profil.keahlian));
 
-// Nilai bawaan dan akses aman.
+
 const topikAktif = profil.topik ?? "Topik belum ditentukan";
 const lokasiPameran = profil.alamat?.kota ?? "Belum ada lokasi pameran";
 console.log("Topik:", topikAktif);
 console.log("Lokasi:", lokasiPameran);
 
-// Array methods: map, filter, dan find.
+
 const judulProyek = daftarProyek.map((proyek) => proyek.judul);
 const proyekSelesai = daftarProyek.filter((proyek) => proyek.selesai);
 const filmKatalog = daftarProyek.find((proyek) => proyek.judul === "Avengers: Endgame");
@@ -67,12 +61,18 @@ console.table(proyekSelesai);
 console.log("Hasil map:", judulProyek);
 console.log("Hasil find:", filmKatalog);
 
-// Salinan diurutkan sehingga data asli tidak berubah.
+
 const proyekUrut = [...daftarProyek].sort((a, b) => a.tahun - b.tahun);
 console.table(proyekUrut);
 console.log("Data asli setelah sort tetap:", daftarProyek);
 
 
-// Data dan fungsi dari P8 disediakan untuk js/dom.js.
-// Karena kedua berkas menggunakan type="module", ekspor data agar dapat diimpor.
-export { profil, jumlahProyek, daftarProyek, buatPerkenalan, formatKeahlian };
+export {
+    profil,
+    jumlahProyek,
+    daftarProyek,
+    buatPerkenalan,
+    formatKeahlian,
+    proyekSelesai,
+    filmKatalog,
+};

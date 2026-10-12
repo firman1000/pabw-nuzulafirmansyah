@@ -7,32 +7,61 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
-    <h1 id="nama-halaman">MARVEL STUDIOS</h1>
-    <p id="deskripsi"></p>
-    <nav aria-label="Navigasi utama">
-        <a href="#home">HOME</a>
-        <a href="#daftar-film">DAFTAR FILM</a>
-        <a href="#karakter-pameran">KARAKTER &amp; PAMERAN</a>
+<header class="hero">
+    <nav class="navigasi" aria-label="Navigasi utama">
+        <a class="merek" href="#home" aria-label="Marvel Studios, ke beranda">
+            <span class="merek-markah" aria-hidden="true">M</span>
+            <span>MARVEL <strong>STUDIOS</strong></span>
+        </a>
+        <div class="navigasi-tautan">
+            <a href="#home">BERANDA</a>
+            <a href="#daftar-film">DAFTAR FILM</a>
+            <a href="#karakter-pameran">KARAKTER</a>
+            <a href="#kontak">KONTAK</a>
+        </div>
     </nav>
+    <div class="hero-konten">
+        <p class="eyebrow">UNIVERSE OF HEROES</p>
+        <h1 id="nama-halaman">MARVEL STUDIOS</h1>
+        <p id="deskripsi"></p>
+        <a class="tombol-hero" href="#daftar-film">Jelajahi koleksi <span aria-hidden="true">↓</span></a>
+    </div>
+    <span class="hero-aksen" aria-hidden="true">MARVEL CINEMATIC UNIVERSE</span>
 </header>
 
 <main id="home">
-    <section id="profil">
-        <h2 id="judul-profil"></h2>
-        <p id="kalimat-perkenalan"></p>
-        <p><strong>Keahlian:</strong> <span id="keahlian"></span></p>
-        <p><strong>Jumlah proyek:</strong> <span id="jumlah-proyek"></span></p>
+    <section id="profil" class="kartu-profil">
+        <div class="profil-identitas">
+            <p class="eyebrow">TENTANG HALAMAN INI</p>
+            <h2 id="judul-profil"></h2>
+            <p id="kalimat-perkenalan"></p>
+        </div>
+        <div class="profil-statistik">
+            <div class="statistik">
+                <span class="label-statistik">KEAHLIAN</span>
+                <strong id="keahlian"></strong>
+            </div>
+            <div class="statistik">
+                <span class="label-statistik">JUMLAH PROYEK</span>
+                <strong id="jumlah-proyek"></strong>
+            </div>
+        </div>
     </section>
 
-    <section id="daftar-film">
-        <h2>Daftar Film Marvel Studios</h2>
-        <div id="filter" class="filter-bar" aria-label="Filter kategori film">
-            <button type="button" class="filter aktif" data-kategori="semua">Semua</button>
-            <button type="button" class="filter" data-kategori="Avengers">Avengers</button>
-            <button type="button" class="filter" data-kategori="Solo">Solo</button>
+    <section id="daftar-film" class="panel">
+        <div class="judul-bagian">
+            <div>
+                <p class="eyebrow">JELAJAHI MCU</p>
+                <h2>Daftar Film Marvel Studios</h2>
+            </div>
+            <span class="nomor-bagian" aria-hidden="true">01 / FILM</span>
         </div>
-        <p id="pesan-kosong" hidden>Tidak ada film untuk kategori ini.</p>
+        <div id="filter" class="filter-bar" aria-label="Filter kategori film">
+            <button type="button" class="filter aktif" data-kategori="semua" aria-pressed="true">Semua film</button>
+            <button type="button" class="filter" data-kategori="Avengers" aria-pressed="false">Avengers</button>
+            <button type="button" class="filter" data-kategori="Solo" aria-pressed="false">Solo</button>
+        </div>
+        <p id="pesan-kosong" class="pesan-kosong" hidden>Tidak ada film untuk kategori ini.</p>
         <div class="table-wrap">
             <table>
                 <thead>
@@ -46,42 +75,76 @@
         </div>
     </section>
 
-    <section id="karakter-pameran">
-        <h2>Karakter &amp; Pameran</h2>
-        <p id="ringkasan-selesai"></p>
-        <p id="hasil-find"></p>
+    <section id="karakter-pameran" class="panel">
+        <div class="judul-bagian">
+            <div>
+                <p class="eyebrow">WAJAH-WAJAH DI BALIK CERITA</p>
+                <h2>Karakter &amp; Pameran</h2>
+            </div>
+            <span class="nomor-bagian" aria-hidden="true">02 / GALERI</span>
+        </div>
+        <div class="galeri-karakter">
+            <figure>
+                <img src="oIfnevRiENDR2IBE31FoFIUWFiMXQgBgGxEk2A~tplv-tiktokx-origin.jpg" alt="Kolase poster film-film Marvel Studios" loading="lazy">
+                <figcaption>Koleksi poster film Marvel <span>01</span></figcaption>
+            </figure>
+            <figure>
+                <img src="images.jpg" alt="Kolase berbagai karakter Marvel, termasuk Avengers dan pahlawan lainnya" loading="lazy">
+                <figcaption>Karakter Marvel <span>02</span></figcaption>
+            </figure>
+            <figure>
+                <img src="thumb-1920-1286361.jpg" alt="Kolase karakter dan film dari Marvel Cinematic Universe" loading="lazy">
+                <figcaption>Marvel Cinematic Universe <span>03</span></figcaption>
+            </figure>
+        </div>
+        <div class="catatan-galeri">
+            <p id="ringkasan-selesai"></p>
+            <p id="hasil-find"></p>
+        </div>
     </section>
 
-    <section id="kontak">
-        <h2>Form Pesan</h2>
-        <p>Form latihan validasi DOM dan event pada Worksheet Pertemuan 9.</p>
+    <section id="kontak" class="panel panel-kontak">
+        <div class="judul-bagian">
+            <div>
+                <p class="eyebrow">PUNYA CERITA UNTUK DIBAGIKAN?</p>
+                <h2>Form Pesan</h2>
+            </div>
+            <span class="nomor-bagian" aria-hidden="true">03 / KONTAK</span>
+        </div>
+        <p class="deskripsi-form">Kirim pesan melalui formulir berikut. Semua kolom wajib diisi.</p>
         <form id="form-pesan" novalidate>
-            <div class="form-field">
-                <label for="nama-pengirim">Nama</label>
-                <input id="nama-pengirim" name="nama" type="text" autocomplete="name">
-                <small class="pesan-galat" id="galat-nama"></small>
+            <div class="form-grid">
+                <div class="form-field">
+                    <label for="nama-pengirim">Nama</label>
+                    <input id="nama-pengirim" name="nama" type="text" autocomplete="name" placeholder="Nama lengkap">
+                    <small class="pesan-galat" id="galat-nama"></small>
+                </div>
+                <div class="form-field">
+                    <label for="email-pengirim">Email</label>
+                    <input id="email-pengirim" name="email" type="email" autocomplete="email" placeholder="nama@email.com">
+                    <small class="pesan-galat" id="galat-email"></small>
+                </div>
+                <div class="form-field form-field-penuh">
+                    <label for="isi-pesan">Pesan</label>
+                    <textarea id="isi-pesan" name="pesan" rows="4" placeholder="Tuliskan pesanmu di sini..."></textarea>
+                    <small class="pesan-galat" id="galat-pesan"></small>
+                </div>
             </div>
-            <div class="form-field">
-                <label for="email-pengirim">Email</label>
-                <input id="email-pengirim" name="email" type="email" autocomplete="email">
-                <small class="pesan-galat" id="galat-email"></small>
-            </div>
-            <div class="form-field">
-                <label for="isi-pesan">Pesan</label>
-                <textarea id="isi-pesan" name="pesan" rows="3"></textarea>
-                <small class="pesan-galat" id="galat-pesan"></small>
-            </div>
-            <button id="tombol-kirim" type="submit" disabled>Kirim</button>
+            <button id="tombol-kirim" type="submit" disabled>Kirim pesan <span aria-hidden="true">→</span></button>
             <p id="status-form" role="status" aria-live="polite"></p>
         </form>
     </section>
 </main>
 
 <footer>
+    <a class="merek merek-footer" href="#home" aria-label="Kembali ke atas">
+        <span class="merek-markah" aria-hidden="true">M</span>
+        <span>MARVEL <strong>STUDIOS</strong></span>
+    </a>
     <p>&copy; 2026 MARVEL STUDIOS</p>
-    <p>Dibuat oleh Nuzula Firmansyah - NIM 25523137</p>
+    <p>Dibuat oleh Nuzula Firmansyah <span aria-hidden="true">·</span> NIM 25523137</p>
 </footer>
 
-<script type="module" src="js/app.js"></script>\n<script type="module" src="js/dom.js"></script>
+<script type="module" src="js/dom.js"></script>
 </body>
 </html>

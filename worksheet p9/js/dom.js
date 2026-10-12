@@ -1,6 +1,14 @@
 // P9 - DOM, Event, dan Interaktivitas
 // Nama: Nuzula Firmansyah | NIM: 25523137
-import { profil, jumlahProyek, daftarProyek, buatPerkenalan, formatKeahlian } from "./app.js";
+import {
+    profil,
+    jumlahProyek,
+    daftarProyek,
+    buatPerkenalan,
+    formatKeahlian,
+    proyekSelesai,
+    filmKatalog,
+} from "./app.js";
 
 const judulHalaman = document.querySelector("#nama-halaman");
 const deskripsi = document.querySelector("#deskripsi");
@@ -11,9 +19,11 @@ const jumlah = document.querySelector("#jumlah-proyek");
 const tbody = document.querySelector("#tabel-proyek");
 const barisFilter = document.querySelector("#filter");
 const pesanKosong = document.querySelector("#pesan-kosong");
+const ringkasanSelesai = document.querySelector("#ringkasan-selesai");
+const hasilFind = document.querySelector("#hasil-find");
 
 if (!judulHalaman || !deskripsi || !judulProfil || !perkenalan || !keahlian ||
-    !jumlah || !tbody || !barisFilter || !pesanKosong) {
+    !jumlah || !tbody || !barisFilter || !pesanKosong || !ringkasanSelesai || !hasilFind) {
     throw new Error("Elemen halaman tidak ditemukan. Periksa id di profil.html.");
 }
 
@@ -24,6 +34,8 @@ judulProfil.textContent = `Profil ${profil.nama}`;
 perkenalan.textContent = buatPerkenalan(profil);
 keahlian.textContent = formatKeahlian(profil.keahlian);
 jumlah.textContent = jumlahProyek;
+ringkasanSelesai.textContent = `${proyekSelesai.length} proyek/film dalam data berstatus selesai.`;
+hasilFind.textContent = `Hasil find: ${filmKatalog?.judul ?? "data tidak ditemukan"}`;
 
 function buatBaris(proyek, index) {
     const tr = document.createElement("tr");
@@ -60,7 +72,6 @@ function tandaiTombolAktif(tombolAktif) {
     });
 }
 
-// Satu event listener pada induk melayani semua tombol filter.
 barisFilter.addEventListener("click", (event) => {
     const tombol = event.target.closest("button");
     if (!tombol || !barisFilter.contains(tombol)) return;
@@ -74,7 +85,7 @@ barisFilter.addEventListener("click", (event) => {
 
 render(daftarProyek);
 
-// Validasi form per kolom; preventDefault menjaga halaman tidak dimuat ulang.
+
 const form = document.querySelector("#form-pesan");
 const inputNama = document.querySelector("#nama-pengirim");
 const inputEmail = document.querySelector("#email-pengirim");
