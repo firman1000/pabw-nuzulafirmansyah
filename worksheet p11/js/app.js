@@ -1,4 +1,3 @@
-// P11: perakit aplikasi; logika dipisah ke modul lain.
 import {ambilProyek} from './api.js';
 import {isiProfil,aturMemuat,tampilkanGalat} from './dom.js';
 import {isiProyek,pulihkan,muat} from './state.js';

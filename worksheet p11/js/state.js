@@ -1,4 +1,3 @@
-// P11: satu objek state, fungsi pengubah, dan localStorage.
 import {render} from './dom.js';
 const KUNCI='pabw-p11',VERSI=2;
 export const state={daftarProyek:[],kategoriAktif:'semua',favorit:[]};

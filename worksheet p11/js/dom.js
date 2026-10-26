@@ -1,4 +1,3 @@
-// P11: seluruh sentuhan DOM dan render(state).
 import {profil,buatPerkenalan,formatKeahlian,saring} from './data.js';
 const tbody=document.querySelector('#tabel-proyek'),barisFilter=document.querySelector('#filter'),pesanKosong=document.querySelector('#pesan-kosong'),muatEl=document.querySelector('#pesan-muat');
 export function isiProfil(){document.title=profil.topik;document.querySelector('#nama-halaman').textContent=profil.topik;document.querySelector('#deskripsi').textContent=profil.deskripsi;document.querySelector('#judul-profil').textContent=`Profil ${profil.nama}`;document.querySelector('#kalimat-perkenalan').textContent=buatPerkenalan(profil);document.querySelector('#keahlian').textContent=formatKeahlian(profil.keahlian);const r=document.querySelector('#ringkasan-selesai');if(r)r.textContent='Data film dimuat dari berkas JSON melalui fetch.';}

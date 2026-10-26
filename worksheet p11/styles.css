@@ -347,6 +347,4 @@ footer p { margin: 0; color: var(--redup); font-size: .75rem; }
         animation-duration: .01ms !important;
     }
 }
-
-/* P11 controls */
 .favorit,.tombol-atur-ulang{border:1px solid var(--garis);border-radius:.5rem;padding:.45rem .7rem;color:var(--teks);background:var(--permukaan-terang);cursor:pointer;font:inherit}.favorit[aria-pressed="true"]{color:var(--emas);border-color:var(--emas)}.tombol-atur-ulang{margin:1rem 0}

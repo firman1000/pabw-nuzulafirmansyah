@@ -1,3 +1,2 @@
-// P11: seluruh pendengar peristiwa.
 import {pilihKategori,tambahFavorit,aturUlang} from './state.js';
 export function pasangPendengar(){const f=document.querySelector('#filter');if(f)f.addEventListener('click',e=>{const b=e.target.closest('button[data-kategori]');if(b&&f.contains(b))pilihKategori(b.dataset.kategori);});const d=document.querySelector('#tabel-proyek');if(d)d.addEventListener('click',e=>{const b=e.target.closest('button.favorit');if(b)tambahFavorit(Number(b.dataset.id));});const r=document.querySelector('#atur-ulang');if(r)r.addEventListener('click',aturUlang);}

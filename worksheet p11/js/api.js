@@ -1,4 +1,3 @@
-// Lapisan data P10: alamat API ditetapkan hanya di satu tempat.
 const ALAMAT = 'data/proyek.json';
 
 export async function ambilProyek() {
