@@ -1,0 +1,69 @@
+/* Worksheet P6 — Responsif Mobile-First */
+
+/* dasar: berlaku di semua lebar */
+main.isi {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "sisi"
+        "utama"
+        "bawah";
+    gap: var(--space-4);
+}
+
+.galeri {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.tabel-wrapper {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+main.isi > *,
+.utama,
+.sisi,
+.bawah,
+.form-kolom {
+    min-width: 0;
+}
+
+.kartu__judul,
+.utama,
+.sisi,
+.bawah {
+    overflow-wrap: anywhere;
+}
+
+/* tablet: galeri dua kolom */
+@media (min-width: 48rem) {
+    .galeri {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* desktop: sidebar bersanding dengan konten */
+@media (min-width: 60rem) {
+    main.isi {
+        grid-template-columns: 16rem 1fr;
+        grid-template-areas:
+            "sisi utama"
+            "sisi bawah";
+    }
+
+    .galeri {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

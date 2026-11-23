@@ -1,0 +1,117 @@
+/* Worksheet P5 — Layout Modern: Grid untuk kerangka, Flex untuk baris */
+
+body.page {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100dvh;
+    gap: var(--space-4);
+}
+
+header {
+    padding-block: var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.header-baris {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+}
+
+nav {
+    padding-top: var(--space-4);
+}
+
+nav ul {
+    display: flex;
+    gap: var(--space-4);
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main.isi {
+    display: grid;
+    grid-template-columns: 16rem 1fr;
+    grid-template-areas:
+        "sisi utama"
+        "sisi bawah";
+    gap: var(--space-6);
+    min-width: 0;
+    padding-block: var(--space-4);
+    align-items: start;
+}
+
+.sisi {
+    grid-area: sisi;
+    min-width: 0;
+}
+
+.utama {
+    grid-area: utama;
+    min-width: 0;
+}
+
+.bawah {
+    grid-area: bawah;
+    min-width: 0;
+}
+
+main.isi > section {
+    min-width: 0;
+}
+
+.sisi__menu {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.sisi__menu a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.sisi__menu a:hover {
+    text-decoration: underline;
+}
+
+.tabel-wrapper {
+    min-width: 0;
+    overflow-x: auto;
+}
+
+footer {
+    padding-block: var(--space-4);
+    border-top: 1px solid var(--color-border);
+    color: var(--color-fg);
+    font-size: var(--text-sm);
+}
+
+@media (max-width: 50rem) {
+    body.page {
+        gap: var(--space-2);
+    }
+
+    main.isi {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "sisi"
+            "utama"
+            "bawah";
+    }
+}

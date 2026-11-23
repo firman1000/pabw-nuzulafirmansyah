@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "judul": "The Avengers",
+    "tahun": 2012,
+    "deskripsi": "Enam superhero pertama bumi terpaksa menekan ego mereka untuk membentuk tim pertama kali demi menghentikan invasi alien(Chitauri) yang dipimpin oleh loki di new york.",
+    "karakter": "Karakter Avengers",
+    "rating": 4.0,
+    "kategori": "Avengers",
+    "durasi": 143,
+    "poster": { "kolom": 5, "baris": 0 }
+  },
+  {
+    "id": 2,
+    "judul": "The Avengers: Age of Ultron",
+    "tahun": 2015,
+    "deskripsi": "Tim Avengers harus berhadapan dengan Ultron, kecerdasan buatan (AI) ciptaan Tony Stark yang menjadi rusak dan berniat memusnahkan umat manusia demi kedamaian bumi.",
+    "karakter": "Karakter Avengers",
+    "rating": 3.5,
+    "kategori": "Avengers",
+    "durasi": 141,
+    "poster": { "kolom": 4, "baris": 1 }
+  },
+  {
+    "id": 3,
+    "judul": "Avengers: Infinity War",
+    "tahun": 2018,
+    "deskripsi": "Seluruh pahlawan super di alam semesta bersatu demi mencegah Thanos mengumpulkan enam Infinity Stones yang ingin ia gunakan untuk melenyapkan setengah populasi semesta.",
+    "karakter": "Karakter Avengers",
+    "rating": 4.1,
+    "kategori": "Avengers",
+    "durasi": 149,
+    "poster": { "kolom": 0, "baris": 3 }
+  },
+  {
+    "id": 4,
+    "judul": "Avengers: Endgame",
+    "tahun": 2019,
+    "deskripsi": "Setelah kekalahan besar melawan Thanos, para pahlawan yang tersisa melakukan misi perjalanan waktu yang berisiko tinggi demi mengembalikan miliaran nyawa yang telah lenyap.",
+    "karakter": "Karakter Avengers",
+    "rating": 4.2,
+    "kategori": "Avengers",
+    "durasi": 181,
+    "poster": { "kolom": 3, "baris": 3 }
+  }
+]

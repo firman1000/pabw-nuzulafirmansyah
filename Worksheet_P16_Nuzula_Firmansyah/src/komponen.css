@@ -1,0 +1,200 @@
+section {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-1);
+    padding: var(--card-pad);
+}
+
+.sisi {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.sisi__menu {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+caption {
+    text-align: left;
+    font-size: var(--text-xl);
+    font-weight: 700;
+    padding-bottom: var(--space-3);
+}
+
+th,
+td {
+    border: 1px solid var(--color-border);
+    padding: var(--space-2) var(--space-3);
+    text-align: left;
+    vertical-align: top;
+}
+
+thead th {
+    background: var(--color-primary);
+    color: var(--color-surface);
+}
+
+tbody tr:nth-child(even) {
+    background: color-mix(in srgb, var(--color-surface) 88%, var(--color-primary));
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+figcaption {
+    font-size: var(--text-sm);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    max-width: 40rem;
+}
+
+.form-kolom {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    min-width: 0;
+}
+
+label {
+    font-size: var(--text-sm);
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    min-width: 0;
+    font: inherit;
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    color: var(--color-fg);
+}
+
+button {
+    align-self: flex-start;
+    font: inherit;
+    padding: var(--space-2) var(--space-4);
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    background: var(--color-primary);
+    color: var(--color-surface);
+    cursor: pointer;
+}
+
+button:hover {
+    filter: brightness(0.92);
+}
+
+:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+}
+
+.pesan-galat {
+    display: none;
+    color: var(--color-danger);
+    font-size: var(--text-sm);
+}
+
+.form-kolom:has(input:user-invalid) .pesan-galat {
+    display: block;
+}
+
+input:user-invalid {
+    border-color: var(--color-danger);
+    border-width: 2px;
+}
+
+.pengaturan-tema {
+    display: flex;
+    align-items: center;
+}
+
+.pengalih-tema {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.tombol-tema {
+    display: inline-block;
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-full);
+    color: var(--color-primary);
+    background: var(--color-surface);
+    cursor: pointer;
+    font-size: var(--text-sm);
+    font-weight: 600;
+}
+
+.tombol-tema:hover {
+    background: var(--color-primary);
+    color: var(--color-surface);
+}
+
+/* Penempatan menonjol: kartu informasi memanjang dua jalur kolom */
+.sorotan {
+    grid-column: span 2;
+}
+
+/* Galeri adaptif dari materi P5 */
+.galeri {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: var(--space-4);
+}
+
+.kartu {
+    display: grid;
+    align-content: start;
+    min-height: 14rem;
+    min-width: 0;
+    gap: var(--space-3);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-1);
+    padding: var(--card-pad);
+}
+
+.kartu__isi {
+    min-width: 0;
+}
+
+.kartu__judul {
+    overflow-wrap: anywhere;
+}
+
+.kartu__kaki {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+}
+
+@media (max-width: 50rem) {
+    .sorotan {
+        grid-column: auto;
+    }
+}

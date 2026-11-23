@@ -1,0 +1,16 @@
+WORKSHEET P18 — CATATAN PENGISIAN
+
+Dokumen Word sudah diisi untuk identitas, tabel konsep arsitektur, dan refleksi.
+
+Bagian 1 (verifikasi instalasi) sengaja diberi status BELUM DIVERIFIKASI.
+Jangan mengisi XAMPP/MAMP/Laragon, versi PHP, atau status Apache/MySQL berdasarkan
+perkiraan. Lengkapi setelah menjalankan paket server lokal di laptop:
+
+1. Buka panel kontrol XAMPP/MAMP/Laragon.
+2. Jalankan Apache dan MySQL/MariaDB.
+3. Buat info.php berisi: <?php phpinfo(); ?>
+4. Simpan di folder web root (misalnya htdocs untuk XAMPP).
+5. Buka http://localhost/info.php dan catat versi PHP.
+6. Ambil tangkapan layar halaman info PHP untuk bukti penyerahan.
+
+Jawaban konsep pada Bagian 2 dan refleksi sudah diisi.
